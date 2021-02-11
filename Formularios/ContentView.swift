@@ -23,12 +23,15 @@ struct ContentView: View {
     
     @State private var showActionSheet = false
     @State private var selectedCourse: Course?
+    @State private var showSettingsView: Bool = false
+    @EnvironmentObject var settingsFactory: SettingsFactory
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(courses) { course in //A la lista le pasamos los cursos y utilizamos el curso actual //Se utiliza ForEach en vez de List con los parámetros, porque solo el ForEach permite eliminar elementos de la lista
+                ForEach(courses.filter(shouldShowCourse).sorted(by: self.settingsFactory.order.predicateSort())) { course in //A la lista le pasamos los cursos y utilizamos el curso actual //Se utiliza ForEach en vez de List con los parámetros, porque solo el ForEach permite eliminar elementos de la lista //Se filtra por los cursos que cumplan la condición de la función shouldShowCourse()
                     ZStack{
+                        
                         CourseRoundImageRow(course: course)
                             .contextMenu {
                                 
@@ -91,8 +94,20 @@ struct ContentView: View {
                 
             }
             .navigationBarTitle("Cursos online", displayMode: .automatic)
-            
+            .navigationBarItems(trailing:
+                                    Button(action: {
+                                        self.showSettingsView = true
+                                    }, label: {
+                                        Image(systemName: "gear")
+                                            .font(.title)
+                                            .foregroundColor(.gray)
+                                    })
+            )
+            .sheet(isPresented: $showSettingsView, content: {
+                SettingsView().environmentObject(self.settingsFactory)
+            })
         }
+        
     }
     
     
@@ -116,12 +131,18 @@ struct ContentView: View {
         }
     }
     
+    private func shouldShowCourse(course: Course) -> Bool {
+        let checkPurchased = (self.settingsFactory.showPurchasedOnly && course.purchased) || !self.settingsFactory.showPurchasedOnly
+        let checkPrice = (course.priceLevel <= self.settingsFactory.maxPrice)
+        return checkPurchased && checkPrice
+    }
+    
 }
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(SettingsFactory())
     }
 }
 
@@ -142,7 +163,7 @@ struct CourseRoundImageRow: View {
                         .font(.system(.body, design: .rounded))
                         .bold()
                     
-                    Text(String(repeating: "€", count: course.priceLevel))
+                    Text(String(repeating: "$", count: course.priceLevel))
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }

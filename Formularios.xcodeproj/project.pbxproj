@@ -11,9 +11,11 @@
 		1644DB2825AE21D900F946F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644DB2725AE21D900F946F6 /* ContentView.swift */; };
 		1644DB2A25AE21DA00F946F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1644DB2925AE21DA00F946F6 /* Assets.xcassets */; };
 		1644DB2D25AE21DA00F946F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1644DB2C25AE21DA00F946F6 /* Preview Assets.xcassets */; };
-		1644DB3625AE254200F946F6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644DB3525AE254200F946F6 /* DetailView.swift */; };
 		1644DB3925AE25D500F946F6 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644DB3825AE25D500F946F6 /* Course.swift */; };
 		16CF7B9925BA51F400C093A4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CF7B9825BA51F400C093A4 /* SettingsView.swift */; };
+		16DA64EA25D4786200500A19 /* SortingOrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA64E925D4786200500A19 /* SortingOrderType.swift */; };
+		16DD51FE25D4726600BDE1B8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DD51FD25D4726600BDE1B8 /* DetailView.swift */; };
+		16FE6A5A25D4A0D80029745B /* SettingsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE6A5925D4A0D80029745B /* SettingsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +25,11 @@
 		1644DB2925AE21DA00F946F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1644DB2C25AE21DA00F946F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1644DB2E25AE21DA00F946F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1644DB3525AE254200F946F6 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailView.swift; path = "../../../../../Downloads/swiftui13-master/11-navigation/11-navigation/DetailView.swift"; sourceTree = "<group>"; };
 		1644DB3825AE25D500F946F6 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		16CF7B9825BA51F400C093A4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		16DA64E925D4786200500A19 /* SortingOrderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingOrderType.swift; sourceTree = "<group>"; };
+		16DD51FD25D4726600BDE1B8 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		16FE6A5925D4A0D80029745B /* SettingsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +64,14 @@
 			children = (
 				1644DB2525AE21D900F946F6 /* FormulariosApp.swift */,
 				1644DB2725AE21D900F946F6 /* ContentView.swift */,
-				1644DB3525AE254200F946F6 /* DetailView.swift */,
+				16DD51FD25D4726600BDE1B8 /* DetailView.swift */,
 				16CF7B9825BA51F400C093A4 /* SettingsView.swift */,
+				1644DB3825AE25D500F946F6 /* Course.swift */,
 				1644DB2925AE21DA00F946F6 /* Assets.xcassets */,
 				1644DB2E25AE21DA00F946F6 /* Info.plist */,
 				1644DB2B25AE21DA00F946F6 /* Preview Content */,
-				1644DB3825AE25D500F946F6 /* Course.swift */,
+				16DA64E925D4786200500A19 /* SortingOrderType.swift */,
+				16FE6A5925D4A0D80029745B /* SettingsFactory.swift */,
 			);
 			path = Formularios;
 			sourceTree = "<group>";
@@ -148,9 +154,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				16CF7B9925BA51F400C093A4 /* SettingsView.swift in Sources */,
+				16DA64EA25D4786200500A19 /* SortingOrderType.swift in Sources */,
+				16DD51FE25D4726600BDE1B8 /* DetailView.swift in Sources */,
 				1644DB3925AE25D500F946F6 /* Course.swift in Sources */,
 				1644DB2825AE21D900F946F6 /* ContentView.swift in Sources */,
-				1644DB3625AE254200F946F6 /* DetailView.swift in Sources */,
+				16FE6A5A25D4A0D80029745B /* SettingsFactory.swift in Sources */,
 				1644DB2625AE21D900F946F6 /* FormulariosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
